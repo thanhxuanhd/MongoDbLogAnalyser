@@ -1,10 +1,22 @@
-# MongoDbLogAnalyser
+# MongoDbLogAnalyzer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+
+The application is tool support convert from MongoDb Log to Queries for re-use for analyzer functions.
+[Refer code](https://github.com/totally-nerdy/tn-mdb-log-to-query)
+
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+OR
+
+Run by docker compose file and Navigate to `http://localhost:5105/`.
+```powershell
+docker compose up -d
+```
+
 
 ## Code scaffolding
 

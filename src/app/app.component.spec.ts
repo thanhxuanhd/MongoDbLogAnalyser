@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'MongoDbLogAnalyser' title`, () => {
+  it(`should have the 'MongoDbLogAnalyzer' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('MongoDbLogAnalyser');
+    expect(app.title).toEqual('MongoDbLogAnalyzer');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, MongoDbLogAnalyser');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, MongoDbLogAnalyzer');
   });
 });

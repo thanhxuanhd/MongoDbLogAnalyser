@@ -1,0 +1,18 @@
+<div class="p-5 w-2/3 mx-auto">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="inputValue" class="block text-sm font-medium text-gray-700">Mongo query</label>
+    <textarea id="inputValue" formControlName="inputValue"
+      class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm h-1/5" required rows="10"></textarea>
+    <button type="submit" class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+      Submit
+    </button>
+  </form>
+
+  <div class="mt-6 text-lg">
+    <div *ngIf="outputValue">Output:
+      <div class="border border-gray-200 p-2">
+        <pre><code [highlightAuto]="outputValue" language="json" lineNumbers></code></pre>
+      </div>
+    </div>
+  </div>
+</div>

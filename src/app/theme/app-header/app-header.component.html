@@ -1,0 +1,29 @@
+<header class="bg-white shadow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0">
+        <a routerLink="/" class="text-xl font-bold text-gray-900">MongoDb Log Analyzer</a>
+      </div>
+      <div class="hidden md:block">
+        <div class="flex space-x-4">
+          <a routerLink="/" class="text-xl font-bold text-gray-900">Home</a>
+        </div>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-900 hover:text-blue-500 focus:outline-none" (click)="onToggleChange()"
+          name="">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+          <span class="hidden">menu-toggle</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden" [ngClass]="{'hidden': !isToggle}">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#" class="block text-gray-900 hover:text-blue-500">Home</a>
+      </div>
+    </div>
+  </div>
+</header>
