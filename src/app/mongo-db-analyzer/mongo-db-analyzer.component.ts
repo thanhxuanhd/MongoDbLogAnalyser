@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MongoDbLogToQueriesService } from '../services';
 @Component({
   selector: 'app-mongo-db-analyzer',
@@ -12,15 +12,22 @@ export class MongoDbAnalyzerComponent {
 
   constructor(private fb: FormBuilder, private mongoQueryAnalyzerService: MongoDbLogToQueriesService) {
     this.form = this.fb.group({
-      inputValue: [''],
+      inputValue: ['', Validators.required],
     });
   }
 
   onSubmit() {
-    try {
-      this.outputValue = this.mongoQueryAnalyzerService.ConvertLogToQuery(this.form.value.inputValue);
-    } catch (error) {
-      this.outputValue = '';
+    if(this.form.valid){
+      try {
+        let error = '';
+        [this.outputValue, error] = this.mongoQueryAnalyzerService.convertLogToQuery(this.form.value.inputValue);
+
+        if(error && error.length > 0){
+          this.form.get('inputValue')?.setErrors({error: error});
+        }
+      } catch (error) {
+        this.outputValue = '';
+      }
     }
   }
 }

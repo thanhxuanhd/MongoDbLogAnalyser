@@ -1,6 +1,9 @@
 <div class="p-5 w-2/3 mx-auto">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <label for="inputValue" class="block text-sm font-medium text-gray-700">Mongo query</label>
+    <div *ngIf="form.get('inputValue')?.errors" class="text-red-500">
+      {{ form.get('inputValue')?.getError('error') }}
+    </div>
     <textarea id="inputValue" formControlName="inputValue"
       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm h-1/5" required rows="10"></textarea>
     <button type="submit" class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
